@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { updateSearchTerm } from "../redux/actions";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   const dispatch = useDispatch();
@@ -40,20 +41,20 @@ function Sidebar() {
             <div className="navbar-nav">
               <ul>
                 <li>
-                  <a
+                  <Link
+                    to="/"
                     className="nav-item nav-link d-flex align-items-center"
-                    href="#link"
                   >
-                    <i className="bi bi-house-door-fill"></i>&nbsp; Home
-                  </a>
+                    <i className="bi bi-heart-fill"></i>&nbsp; Home
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
+                    to="/saved"
                     className="nav-item nav-link d-flex align-items-center"
-                    href="#link"
                   >
-                    <i className="bi bi-book-fill"></i>&nbsp; Your Library
-                  </a>
+                    <i className="bi bi-heart-fill"></i>&nbsp; My List
+                  </Link>
                 </li>
                 <li>
                   <div className="input-group mt-3">
