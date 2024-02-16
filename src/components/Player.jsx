@@ -8,9 +8,10 @@ const Player = () => {
       <div className="row h-100">
         <div className="col-lg-10 offset-lg-2">
           <div className="row h-100 flex-column justify-content-center align-items-center">
-            <div>
+            <div className="d-flex justify-content-center">
               <p className="text-white">
-                {selectedSong ? selectedSong.title : ""}
+                {selectedSong ? selectedSong.title : ""} -{" "}
+                {selectedSong ? selectedSong.artist.name : ""}
               </p>
             </div>
             <div className="col-6 col-md-4 playerControls">

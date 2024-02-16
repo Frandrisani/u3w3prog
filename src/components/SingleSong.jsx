@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addToFavorites,
@@ -26,20 +26,18 @@ const SingleSong = ({ song }) => {
   };
 
   return (
-    <Card>
-      <Card.Img variant="top" src={song.album.cover_medium} alt={song.title} />
-      <Card.Body>
+    <Card className="bg-dark text-white" onClick={handleSelectSong}>
+      <Card.Img src={song.artist.picture_medium} alt={song.title} />
+      <Card.ImgOverlay>
         <Card.Title>{song.title}</Card.Title>
+        <Card.Text>Artist: {song.artist.name}</Card.Text>
         <Button
-          variant={isFavorite ? "danger" : "primary"}
+          variant={isFavorite ? "danger" : "light"}
           onClick={handleToggleFavorite}
         >
-          {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+          {isFavorite ? "Rimuovi dai preferiti" : "Salva nei preferiti"}
         </Button>
-        <Button variant="info" onClick={handleSelectSong}>
-          Play
-        </Button>
-      </Card.Body>
+      </Card.ImgOverlay>
     </Card>
   );
 };
