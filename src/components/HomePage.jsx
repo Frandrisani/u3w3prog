@@ -1,14 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import RowSong from "./RowSong";
+import Sidebar from "./Sidebar";
 
 const HomePage = () => {
-  const artists = ["Adele", "Coldplay", "Ed Sheeran"];
+  const searchArtist = useSelector((state) => state.songs.searchTerm);
 
   return (
     <div style={{ paddingBottom: "70px" }}>
-      {artists.map((artist) => (
-        <RowSong key={artist} artist={artist} />
-      ))}
+      <Sidebar />
+      <RowSong key={searchArtist} artist={searchArtist} />
     </div>
   );
 };

@@ -1,6 +1,17 @@
+import { useDispatch, useSelector } from "react-redux";
+import { updateSearchTerm } from "../redux/actions";
+
 function Sidebar() {
+  const dispatch = useDispatch();
+  const searchTerm = useSelector((state) => state.songs.searchTerm);
+
+  const handleSearch = (event) => {
+    const artist = event.target.value;
+    dispatch(updateSearchTerm(artist));
+  };
+
   return (
-    <aside className="col col-2">
+    <aside>
       <nav
         className="navbar navbar-expand-md fixed-left justify-content-between"
         id="sidebar"
@@ -51,6 +62,8 @@ function Sidebar() {
                       className="form-control"
                       placeholder="Search"
                       aria-label="Search"
+                      onChange={handleSearch}
+                      value={searchTerm}
                     />
                     <div className="input-group-append">
                       <button className="btn btn-outline-secondary btn-sm h-100">

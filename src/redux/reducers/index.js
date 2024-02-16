@@ -4,6 +4,7 @@ import {
   REMOVE_FROM_FAVORITES,
   SELECT_SONG,
   TURN_OFF_SPINNER,
+  UPDATE_SEARCH_TERM,
 } from "../actions";
 
 const initialState = {
@@ -11,6 +12,7 @@ const initialState = {
   favorites: [],
   selectedSong: [],
   isLoading: true,
+  searchTerm: "Adele",
 };
 
 const songsReducer = (state = initialState, action) => {
@@ -42,6 +44,12 @@ const songsReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
+      };
+
+    case UPDATE_SEARCH_TERM:
+      return {
+        ...state,
+        searchTerm: action.payload,
       };
 
     default:

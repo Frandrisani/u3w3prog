@@ -19,8 +19,8 @@ const RowSong = ({ artist }) => {
     <Container className="my-4">
       <h2>{artist}</h2>
       <Row>
-        {songs.slice(0, 4).map((song) => (
-          <Col key={song.id}>
+        {songs.slice(0, 8).map((song) => (
+          <Col key={song.id} xs={3} className="g-3">
             <SingleSong song={song} />
           </Col>
         ))}

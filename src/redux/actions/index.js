@@ -3,10 +3,16 @@ export const ADD_TO_FAVORITES = "ADD_TO_FAVORITES";
 export const REMOVE_FROM_FAVORITES = "REMOVE_FROM_FAVORITES";
 export const SELECT_SONG = "SELECT_SONG";
 export const TURN_OFF_SPINNER = "TURN_OFF_SPINNER";
+export const UPDATE_SEARCH_TERM = "UPDATE_SEARCH_TERM";
 
 export const saveSongs = (songs) => ({
   type: SAVE_SONGS,
   payload: songs,
+});
+
+export const updateSearchTerm = (term) => ({
+  type: UPDATE_SEARCH_TERM,
+  payload: term,
 });
 
 export const addToFavorites = (songId) => ({
