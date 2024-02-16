@@ -5,7 +5,7 @@ const HomePage = () => {
   const artists = ["Adele", "Coldplay", "Ed Sheeran"];
 
   return (
-    <div>
+    <div style={{ paddingBottom: "70px" }}>
       {artists.map((artist) => (
         <RowSong key={artist} artist={artist} />
       ))}

@@ -10,8 +10,7 @@ const Player = () => {
           <div className="row h-100 flex-column justify-content-center align-items-center">
             <div className="d-flex justify-content-center">
               <p className="text-white">
-                {selectedSong ? selectedSong.title : ""} -{" "}
-                {selectedSong ? selectedSong.artist.name : ""}
+                {selectedSong ? selectedSong.title : ""}
               </p>
             </div>
             <div className="col-6 col-md-4 playerControls">

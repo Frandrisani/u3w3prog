@@ -7,12 +7,15 @@ import SingleSong from "./SingleSong";
 const RowSong = ({ artist }) => {
   const dispatch = useDispatch();
   const songs = useSelector((state) => state.songs.songs);
+  const isLoading = useSelector((state) => state.songs.isLoading);
 
   useEffect(() => {
     dispatch(getSongs(artist));
   }, [dispatch, artist]);
 
-  return (
+  return isLoading ? (
+    ""
+  ) : (
     <Container className="my-4">
       <h2>{artist}</h2>
       <Row>

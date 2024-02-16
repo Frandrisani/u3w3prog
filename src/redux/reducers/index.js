@@ -3,12 +3,14 @@ import {
   ADD_TO_FAVORITES,
   REMOVE_FROM_FAVORITES,
   SELECT_SONG,
+  TURN_OFF_SPINNER,
 } from "../actions";
 
 const initialState = {
   songs: [],
   favorites: [],
   selectedSong: [],
+  isLoading: true,
 };
 
 const songsReducer = (state = initialState, action) => {
@@ -34,6 +36,12 @@ const songsReducer = (state = initialState, action) => {
       return {
         ...state,
         selectedSong: action.payload,
+      };
+
+    case TURN_OFF_SPINNER:
+      return {
+        ...state,
+        isLoading: false,
       };
 
     default:

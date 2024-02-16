@@ -2,6 +2,7 @@ export const SAVE_SONGS = "SAVE_SONGS";
 export const ADD_TO_FAVORITES = "ADD_TO_FAVORITES";
 export const REMOVE_FROM_FAVORITES = "REMOVE_FROM_FAVORITES";
 export const SELECT_SONG = "SELECT_SONG";
+export const TURN_OFF_SPINNER = "TURN_OFF_SPINNER";
 
 export const saveSongs = (songs) => ({
   type: SAVE_SONGS,
@@ -37,6 +38,10 @@ export const getSongs = (artist) => {
       }
     } catch (error) {
       console.error("Error fetching data", error);
+    } finally {
+      dispatch({
+        type: TURN_OFF_SPINNER,
+      });
     }
   };
 };

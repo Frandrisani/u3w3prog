@@ -27,7 +27,11 @@ const SingleSong = ({ song }) => {
 
   return (
     <Card className="bg-dark text-white" onClick={handleSelectSong}>
-      <Card.Img src={song.artist.picture_medium} alt={song.title} />
+      <Card.Img
+        src={song.artist.picture_medium}
+        alt={song.title}
+        className="opacity-50"
+      />
       <Card.ImgOverlay>
         <Card.Title>{song.title}</Card.Title>
         <Card.Text>Artist: {song.artist.name}</Card.Text>
